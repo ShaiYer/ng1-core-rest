@@ -1,0 +1,12 @@
+<p>
+    <div ng-show="editActive">
+        <textarea cols="80" id="[[editorName]]" name="[[editorName]]" ng-model="vm.ngModel" rows="10" ></textarea>
+    </div>
+
+
+
+    <div class="editQuill" ng-show="!editActive" ng-click="init()">
+        <div ng-bind-html="vm.ngModel"></div>
+        <i class="material-icons">mode_edit</i>
+    </div>
+</p>

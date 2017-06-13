@@ -1,0 +1,31 @@
+<div class="input-field" ng-switch="inputType">
+
+
+    <span ng-switch-when="datepicker">
+        <input type="date" id="[[vm.content.nameRandom]]" class="datepicker" ncm-datepicker bind-to-model="vm.fieldModel">
+        <label for="[[vm.content.nameRandom]]" class="active">[[vm.fieldTitle]]</label>
+    </span>
+
+    <span ng-switch-when="textareaQuill">
+        <div ng-quill-editor text-model="vm.fieldModel" on-edit="vm.content.onEdit"></div>
+    </span>
+
+    <span ng-switch-when="textarea">
+        <textarea id="[[inputId]]"  ng-model="vm.fieldModel" class="materialize-textarea"></textarea>
+        <label for="[[inputId]]" ng-class="{active:vm.fieldModel}">[[vm.fieldTitle]]</label>
+    </span>
+
+    <span ng-switch-when="checkbox">
+        <input type="checkbox" id="[[inputId]]"  ng-model="vm.fieldModel" class="filled-in" value="true" ng-checked="checked"/>
+        <label for="[[inputId]]" >[[vm.fieldTitle]]</label>
+    </span>
+    <span ng-switch-default>
+        <input id="[[inputId]]" type="text" ng-model="vm.fieldModel" class="validate" name="vm.fieldName">
+        <label for="[[inputId]]" ng-class="{active:vm.fieldModel}">[[vm.fieldTitle]]</label>
+    </span>
+
+
+</div>
+
+
+

@@ -1,0 +1,22 @@
+
+
+<div class="ngQuillWrapper">
+    <div ng-show="editActive">
+        <ng-quill-editor name="editorName" callback="editorCallback(editor, name)" ng-model="fieldModel" text="fieldModel" translations="translations"
+                         toolbar="true" show-toolbar="true" link-tooltip="true" image-tooltip="false"
+                         toolbar-entries="font size bold list bullet italic underline strike align color background link"
+                         editor-required="true" required="" error-class="input-error"
+                         fontsize-options="fontsizeOptions" fontfamily-options="fontfamilyOptions">
+
+        </ng-quill-editor>
+    </div>
+
+
+    <div class="editQuill" ng-show="!editActive">
+        <div ng-bind-html="fieldModel"></div>
+        <i class="material-icons">mode_edit</i>
+    </div>
+</div>
+
+
+
